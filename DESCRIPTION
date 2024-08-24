@@ -1,0 +1,14 @@
+Package: anRpackage
+Type: Package
+Title: Concise Summary of What the Package Does
+Version: 1.0
+Date: 2024-08-24
+Author: Nathan-McJames
+Maintainer: Nathan-McJames <nathan.mcjames.2016@mumail.ie>
+Description: More about what it does (maybe more than one line).
+License: GPL (>= 2)
+Suggests: tinytest
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Imports: Rcpp (>= 1.0.12)
+LinkingTo: Rcpp, RcppArmadillo
