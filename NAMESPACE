@@ -1,5 +1,5 @@
-useDynLib(anRpackage, .registration=TRUE)
+useDynLib(mvbcf, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
 ## export all regularly named functions
 ## (but allow for private functions whose name starts with a dot).name <- function(...)
-exportPattern("^[[:alpha:]]+")
+export("run_mvbcf")

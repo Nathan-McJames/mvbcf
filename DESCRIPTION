@@ -1,14 +1,14 @@
-Package: anRpackage
+Package: mvbcf
 Type: Package
-Title: Concise Summary of What the Package Does
+Title: An R Package Implementing Multivariate Bayesian Causal Forests
 Version: 1.0
-Date: 2024-08-24
-Author: Nathan-McJames
+Date: 2024-08-25
+Author: Nathan McJames, Ann O'Shea, Yong Chen Goh, Andrew Parnell
 Maintainer: Nathan-McJames <nathan.mcjames.2016@mumail.ie>
-Description: More about what it does (maybe more than one line).
-License: GPL (>= 2)
+Description: An R package implementing the multivariate bcf model.
+License: MIT + file LICENSE
 Suggests: tinytest
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: Rcpp (>= 1.0.12)
-LinkingTo: Rcpp, RcppArmadillo
+LinkingTo: Rcpp, RcppArmadillo, RcppDist
