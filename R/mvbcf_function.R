@@ -16,8 +16,8 @@
 ##' @param beta_tau The beta parameter in the tree prior for tau trees
 ##' @param sigma_mu The prior for the terminal node parameters of mu trees
 ##' @param sigma_tau The prior for the terminal node parameter of tau trees
-##' @param v_0 The treatment indicator
-##' @param sigma_0 The effect moderators used in the tau trees
+##' @param v_0 Prior degrees of freedom for inverse-wishart distribution
+##' @param sigma_0 The scale matrix in the prior for inverse-wishart distribution
 ##' @param n_iter The number of MCMC iterations
 ##' @param n_tree The number of mu trees
 ##' @param n_tree_tau The number of tau trees
@@ -44,9 +44,12 @@ run_mvbcf<-function(X_con,
                     n_tree_tau,
                     min_nodesize)
 {
+  
+  Z_mat<-matrix(rep(Z, ncol(y)), ncol=ncol(y), byrow=F) 
+  
   fast_bart(X_con,
             y,
-            Z,
+            Z_mat,
             X_mod,
             X_con_test,
             X_mod_test,

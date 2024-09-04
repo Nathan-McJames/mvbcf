@@ -6,45 +6,30 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Welcome to the mvbcf R package!
+Welcome to the mvbcf R package! This package is currently a work in
+progress so please check back regularly to keep an eye on progress!
+
+This R package implements the Multivariate Bayesian Causal Forest Model
+introduced in McJames et al. 2024:
+
+McJames, N., O’Shea, A., Goh, Y. C. & Parnell, A. (2024). Bayesian
+causal forests for multivariate outcomes: Application to Irish data from
+an international large scale education assessment. *Journal of the Royal
+Statistical Society Series A: Statistics in Society*, 1-23.
+<https://doi.org/10.1093/jrsssa/qnae049>.
+
+See below for details on installation. For worked examples and
+quick-start guides showing how to use the package, check out the
+vignettes and other materials.
 
 ## Installation
 
-You can install the development version of mvbcf like so:
+You can install the development version of mvbcf with the following:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+
+if (!require("devtools")) {
+  install.packages("devtools")
+}
+install_github("Nathan-McJames/mvbcf")
 ```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(mvbcf)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
