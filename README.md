@@ -31,4 +31,6 @@ if (!require("devtools")) {
   install.packages("devtools")
 }
 install_github("Nathan-McJames/mvbcf")
+#Or to install vignettes with the package as well:
+#install_github("Nathan-McJames/mvbcf", build_vignettes = TRUE)
 ```
