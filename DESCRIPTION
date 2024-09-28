@@ -4,11 +4,15 @@ Title: An R Package Implementing Multivariate Bayesian Causal Forests
 Version: 1.0
 Date: 2024-08-25
 Author: Nathan McJames, Ann O'Shea, Yong Chen Goh, Andrew Parnell
-Maintainer: Nathan-McJames <nathan.mcjames.2016@mumail.ie>
-Description: An R package implementing the multivariate bcf model.
+Maintainer: Nathan-McJames <mcjamesnathan@yahoo.ie>
+Description: An R Package Implementing Multivariate Bayesian Causal Forests.
 License: MIT + file LICENSE
-Suggests: tinytest
+Suggests: 
+    knitr,
+    rmarkdown,
+    tinytest
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Imports: Rcpp (>= 1.0.12)
 LinkingTo: Rcpp, RcppArmadillo, RcppDist
+VignetteBuilder: knitr

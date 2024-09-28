@@ -9,20 +9,20 @@ run_mvbcf(
   y,
   Z,
   X_mod,
-  X_con_test,
-  X_mod_test,
-  alpha,
-  beta,
-  alpha_tau,
-  beta_tau,
-  sigma_mu,
-  sigma_tau,
-  v_0,
-  sigma_0,
-  n_iter,
-  n_tree,
-  n_tree_tau,
-  min_nodesize
+  X_con_test = X_con,
+  X_mod_test = X_mod,
+  alpha = 0.95,
+  beta = 2,
+  alpha_tau = 0.25,
+  beta_tau = 3,
+  sigma_mu = diag((1)^2/n_tree, ncol(y)),
+  sigma_tau = diag((1)^2/n_tree_tau, ncol(y)),
+  v_0 = ncol(y) + 2,
+  sigma_0 = diag(1, ncol(y)),
+  n_iter = 1000,
+  n_tree = 50,
+  n_tree_tau = 20,
+  min_nodesize = 1
 )
 }
 \arguments{
@@ -50,9 +50,9 @@ run_mvbcf(
 
 \item{sigma_tau}{The prior for the terminal node parameter of tau trees}
 
-\item{v_0}{The treatment indicator}
+\item{v_0}{Prior degrees of freedom for inverse-wishart distribution}
 
-\item{sigma_0}{The effect moderators used in the tau trees}
+\item{sigma_0}{The scale matrix in the prior for inverse-wishart distribution}
 
 \item{n_iter}{The number of MCMC iterations}
 

@@ -1,17 +1,22 @@
+---
+title: "Quick-Start Guide"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Quick-Start Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
+To get started quickly, and test everything is working properly, here is a simple example showing how to use the package with the default hyper-parameter settings. For more details on the hyper-parameters and other guides, see the other examples.
 
-
-
-
-
-
-
-
-## Example
-
-To get started quickly, and test everything is working properly, here is a simple example showing how to use the package. More detailed examples can be found in the vignettes.
-
+## Fitting The Model
 
 
 ```{r, results = "hide"}
@@ -50,50 +55,29 @@ y2<-mu2+Z*tau2+rnorm(n, 0, 1)
 
 Y<-cbind(y1, y2)
 
-#set some parameters
-n_tree_mu<-50
-n_tree_tau<-20
-n_iter<-2000
-mu_val<-1
-tau_val<-0.5
-v_val<-1
-wish_val<-1
-min_val<-1
-
 mvbcf_mod <- run_mvbcf(X,
                        Y,
                        Z,
-                       X,
-                       X,
-                       X,
-                       0.95,
-                       2,
-                       0.25,
-                       3,
-                       diag((mu_val)^2/n_tree_mu, 2),
-                       diag((tau_val)^2/n_tree_tau, 2),
-                       v_val,
-                       diag(wish_val, 2),
-                       n_iter,
-                       n_tree_mu,
-                       n_tree_tau,
-                       min_val)
+                       X)
 
 
 
 ```
 
-Quick look at convergence of sigma11 and sigma22
+## Check Convergence
 
-```{r}
+Quick look at convergence of posterior of $\Sigma_{1,1}$ and $\Sigma_{2,2}$ (The residual variance corresponding to outcome variables $y_{1}$ and $y_{2}$).
+
+```{r, fig.width=7}
 plot(mvbcf_mod$sigmas[1,1,], type="l", ylab="Sigma11 Samples")
 plot(mvbcf_mod$sigmas[2,2,], type="l", ylab="Sigma22 Samples")
 ```
 
+## Look at Average Treatment Effect (ATE) Posterior
 
-Histogram of posterior samples of ATE for y1 and y2
+Histogram of posterior samples of ATE (Average Treatment Effect) for $y_{1}$ and $y_{2}$.
 
-```{r}
+```{r, fig.width=7}
 
 hist(colMeans(mvbcf_mod$predictions_tau[,1,]),
      xlab="Tau1 ATE Samples",
@@ -105,9 +89,11 @@ hist(colMeans(mvbcf_mod$predictions_tau[,2,]),
 
 ```
 
-Get predicted mu, tau, and y values, then compare with ground truth.
+## Look at Model Predictions
 
-```{r}
+Get predicted $\mu$, $\tau$, and $y$ predictions, then compare with ground truth.
+
+```{r, fig.width=7}
 
 mu1_preds<-rowMeans(mvbcf_mod$predictions[,1,])
 mu2_preds<-rowMeans(mvbcf_mod$predictions[,2,])
@@ -119,15 +105,17 @@ y1_preds<-rowMeans(mvbcf_mod$predictions[,1,]+Z*mvbcf_mod$predictions_tau[,1,])
 y2_preds<-rowMeans(mvbcf_mod$predictions[,2,]+Z*mvbcf_mod$predictions_tau[,2,])
 
 
-plot(mu1, mu1_preds, main="Predicted vs. True Values")
+plot(mu1, mu1_preds, main="Predicted vs. True Values", xlab="Mu1", ylab="Mu1 Predictions")
 abline(0,1)
 
-plot(tau1, tau1_preds, main="Predicted vs. True Values")
+plot(tau1, tau1_preds, main="Predicted vs. True Values", xlab="Tau1", ylab="Tau1 Predictions")
 abline(0,1)
 
-plot(y1, y1_preds, main="Predicted vs. True Values")
+plot(y1, y1_preds, main="Predicted vs. True Values", xlab="y1", ylab="y1 Predictions")
 abline(0,1)
 
-
+y1_residuals<-y1-y1_preds
+qqnorm(y1_residuals)
+qqline(y1_residuals)
 
 ```

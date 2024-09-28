@@ -6,11 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Welcome to the mvbcf R package! This package is currently a work in
-progress so please check back regularly to keep an eye on progress!
-
-This R package implements the Multivariate Bayesian Causal Forest Model
-introduced in McJames et al. 2024:
+Welcome to the mvbcf R package! This R package implements the
+Multivariate Bayesian Causal Forest model introduced in McJames et al.,
+2024:
 
 McJames, N., O’Shea, A., Goh, Y. C. & Parnell, A. (2024). Bayesian
 causal forests for multivariate outcomes: Application to Irish data from
@@ -20,7 +18,8 @@ Statistical Society Series A: Statistics in Society*, 1-23.
 
 See below for details on installation. For worked examples and
 quick-start guides showing how to use the package, check out the
-vignettes and other materials.
+vignettes and other materials. For questions, suggestions, or other
+queries, please reach out to me at mcjamesnathan@yahoo.ie.
 
 ## Installation
 
