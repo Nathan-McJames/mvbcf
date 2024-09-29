@@ -16,3 +16,4 @@ RoxygenNote: 7.3.2
 Imports: Rcpp (>= 1.0.12)
 LinkingTo: Rcpp, RcppArmadillo, RcppDist
 VignetteBuilder: knitr
+URL: https://nathan-mcjames.github.io/mvbcf/
