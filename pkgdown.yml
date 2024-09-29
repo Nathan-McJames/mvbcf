@@ -1,0 +1,10 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  full-guide: full-guide.html
+  quick-start: quick-start.html
+last_built: 2024-09-29T19:11Z
+urls:
+  reference: https://nathan-mcjames.github.io/mvbcf/reference
+  article: https://nathan-mcjames.github.io/mvbcf/articles
