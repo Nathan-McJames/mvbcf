@@ -3,3 +3,8 @@ importFrom(Rcpp, evalCpp)
 ## export all regularly named functions
 ## (but allow for private functions whose name starts with a dot).name <- function(...)
 export("run_mvbcf")
+export("get_y_preds")
+export("get_mu_preds")
+export("get_sigma_post")
+export("get_ate_post")
+export("get_tau_preds")
