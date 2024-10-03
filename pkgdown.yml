@@ -3,8 +3,9 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   full-guide: full-guide.html
+  helper-functions: helper-functions.html
   quick-start: quick-start.html
-last_built: 2024-09-29T19:11Z
+last_built: 2024-10-03T19:42Z
 urls:
   reference: https://nathan-mcjames.github.io/mvbcf/reference
   article: https://nathan-mcjames.github.io/mvbcf/articles
